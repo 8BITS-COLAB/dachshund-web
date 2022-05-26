@@ -1,9 +1,10 @@
 import React, { useRef, useEffect } from 'react'
 import ScrollReveal from 'scrollreveal'
+import { env } from '../env'
 
-import { NewsletterForm } from './newsletter-form'
+import { RegisterForm } from './register-form'
 
-export function Hero({ title, content, illustration: Illustration }) {
+export function Hero({ title, content, illustration }) {
   const scrollRevealRef = useRef([])
 
   useEffect(() => {
@@ -22,16 +23,20 @@ export function Hero({ title, content, illustration: Illustration }) {
     return () => ScrollReveal().destroy()
   }, [])
 
-  function onNewsletterSubmit(values) {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({ values })
-      }, 1000)
+  async function onRegister(params) {
+    const response = await fetch(`${env.API_URL}/register`, {
+      method: 'POST',
+      body: JSON.stringify(params),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     })
+
+    return response
   }
 
   return (
-    <section className="text-center lg:w-full lg:py-20 lg:text-left">
+    <section className="text-center lg:w-full lg:py-4 lg:text-left">
       <div className="hero mx-auto w-full max-w-6xl px-6">
         <div className="hero-inner relative lg:flex">
           <div
@@ -54,17 +59,19 @@ export function Hero({ title, content, illustration: Illustration }) {
             </div>
 
             <div ref={(el) => (scrollRevealRef.current[2] = el)}>
-              <NewsletterForm
-                className="m-0 mt-8 max-w-md md:flex"
-                submitBtn="Get early access"
-                onSubmit={onNewsletterSubmit}
+              <RegisterForm
+                className="m-0 max-w-md md:flex"
+                submitBtn="Register"
+                onSubmit={onRegister}
               />
             </div>
           </div>
 
-          <div className="relative -ml-6 -mr-6 py-10 lg:p-0">
-            <Illustration />
-          </div>
+          {!!illustration && (
+            <div className="relative -ml-6 -mr-6 py-10 lg:p-0">
+              {illustration}
+            </div>
+          )}
         </div>
       </div>
     </section>

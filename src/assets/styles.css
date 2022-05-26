@@ -1181,6 +1181,10 @@ select {
   margin-top: 0px;
   margin-bottom: 0px;
 }
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .mt-12 {
   margin-top: 3rem;
 }
@@ -1205,9 +1209,6 @@ select {
 .mb-4 {
   margin-bottom: 1rem;
 }
-.mt-8 {
-  margin-top: 2rem;
-}
 .-ml-6 {
   margin-left: -1.5rem;
 }
@@ -1220,11 +1221,11 @@ select {
 .ml-4 {
   margin-left: 1rem;
 }
-.mt-2 {
-  margin-top: 0.5rem;
-}
 .-mt-px {
   margin-top: -1px;
+}
+.mt-2 {
+  margin-top: 0.5rem;
 }
 .flex {
   display: flex;
@@ -1736,6 +1737,10 @@ select {
   .lg\:py-0 {
     padding-top: 0px;
     padding-bottom: 0px;
+  }
+  .lg\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
   .lg\:pt-16 {
     padding-top: 4rem;

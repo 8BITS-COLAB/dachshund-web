@@ -1,17 +1,12 @@
 {
   "version": "2.0.0",
-  "name": "holly-react",
-  "description": "React version of Holly",
-  "author": "Luke McDonald (https://lukemcdonald.com/)",
-  "homepage": "https://lukemcdonald.github.io/holly-react",
+  "name": "dachshund-web",
+  "author": "Elioenai Ferrari <elioenaiferrari@gmail.com>",
   "keywords": [],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lukemcdonald/holly-react.git"
-  },
-  "bugs": {
-    "url": "https://github.com/lukemcdonald/holly-react/issues"
+    "url": "https://github.com/8BITS-COLAB/dachshund-web"
   },
   "scripts": {
     "build": "npm run build:css && vite build",
