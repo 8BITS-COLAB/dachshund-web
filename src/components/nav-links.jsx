@@ -1,25 +1,20 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
 
 const NAV_LINKS = [
-  { name: 'Contact', to: '/contact' },
-  { name: 'About Us', to: '/about' },
-  { name: "FAQ's", to: '/faqs' },
-  { name: 'Support', to: '/support' },
+  {
+    name: 'Docs',
+    to: 'https://documenter.getpostman.com/view/13846559/2s7YYu4hk3',
+  },
 ]
 export function NavLinks({ className }) {
   return (
     <ul className={className}>
       {NAV_LINKS.map((link) => (
         <li key={link.name} className="ml-4">
-          <NavLink
-            to={link.to}
-            className={({ isActive }) =>
-              isActive ? 'border-b text-white' : 'text-white hover:border-b'
-            }
-          >
+          <a href={link.to} className="border-b text-white">
             {link.name}
-          </NavLink>
+          </a>
         </li>
       ))}
     </ul>
